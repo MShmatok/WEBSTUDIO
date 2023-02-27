@@ -118,13 +118,33 @@ img {
 }
 
 .title-txt {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+
+  text-align: center;
 }
 .desc-txt {
+  font-weight: 500;
   line-height: 1.5;
   color: var(--secondary-txt-cl);
+}
+
+@media screen and (min-width: 768px) {
+  .title-txt {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title-txt {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .desc-txt {
+    font-weight: 400;
+  }
 }
 .center-txt {
   text-align: center;
@@ -253,12 +273,14 @@ img {
 
 .mobile-container {
   position: fixed;
+  z-index: 10000;
 
   top: 0;
   left: 0;
 
+  width: 100%;
   min-width: 320px;
-  max-width: 428px;
+
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
 
@@ -274,7 +296,7 @@ img {
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 
-  transform: translateY(-101%);
+  transform: translateX(-100%);
   transition: transform var(--trans-set);
 }
 .mobile-container.is-open {
@@ -320,8 +342,8 @@ img {
 
 .mobile.list-social-media {
   gap: 0px;
+  max-width: 328px;
   justify-content: space-between;
-  margin-right: 25px;
 }
 
 @media screen and (max-width: 767px) {
@@ -363,16 +385,16 @@ img {
 
 /*------------- hero -------------*/
 .section-hero {
-  padding-top: 188px;
-  padding-bottom: 188px;
-  max-width: 1440px;
+  padding-top: 112px;
+  padding-bottom: 112px;
+  max-width: 428px;
   margin: 0 auto;
   background-color: var(--secondary-bg-cl);
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero/hero-photo.jpg);
+    url(../images/hero/img_mob_428_1x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -382,14 +404,14 @@ img {
   text-align: center;
 }
 .hero-title {
-  width: 494px;
+  width: 320px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 48px;
 
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   text-align: center;
   color: var(--light-txt-cl);
 }
@@ -412,14 +434,88 @@ img {
   background-color: var(--pressed-bg-cl);
 }
 
+@media screen and (max-width: 767px) {
+}
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .section-hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/img_mob_856_2x.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+
+    width: 496px;
+  }
+  .section-hero {
+    padding-bottom: 108px;
+    max-width: 768px;
+  }
+
+  .section-hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/img_tab_768_1x.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section-hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/img_tab_1536_2x.jpg);
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section-hero {
+    padding-top: 188px;
+    padding-bottom: 188px;
+    max-width: 1440px;
+  }
+  .section-hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/img_desk_1440_1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section-hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/img_desk_2880_2x.jpg);
+    }
+  }
+}
+
 /*---------------  ADVANTAGS -----------------*/
 .section-advantags {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .advantags-icon-container {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 
@@ -431,14 +527,37 @@ img {
   background-color: var(--grey-light-bg-cl);
 }
 .advantags-list {
-  display: flex;
-  gap: 22px;
+  --ident: 72px;
+  --items: 1;
 }
 
 .advantags-title {
   margin-bottom: 8px;
 }
 
+@media screen and (max-width: 767px) {
+}
+@media screen and (min-width: 768px) {
+  .advantags-icon-container {
+    display: flex;
+  }
+  .advantags-list {
+    --ident: 24px;
+    --items: 2;
+
+    row-gap: 72px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section-advantags {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .advantags-list {
+    --items: 4;
+  }
+}
 /*----------------- Styles for PRODUCT ----------------*/
 .section-product {
   padding-bottom: 120px;
