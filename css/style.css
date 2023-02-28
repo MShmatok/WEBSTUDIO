@@ -1037,6 +1037,10 @@ img {
     --items: 3;
     row-gap: 48px;
   }
+  .img-portfolio {
+    height: 300px;
+    width: 360;
+  }
 }
 /* ================ Modal ==================== */
 .backdrop {
