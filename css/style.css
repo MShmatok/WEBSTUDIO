@@ -200,7 +200,7 @@ img {
   left: 0;
   width: 100%;
   background-color: var(--primary-bg-cl);
-  z-index: 1000;
+  z-index: 1;
 }
 
 .logo-link {
@@ -285,7 +285,7 @@ img {
 
 .mobile-container {
   position: fixed;
-  z-index: 10000;
+  z-index: 10;
 
   top: 0;
   left: 0;
@@ -566,9 +566,6 @@ img {
   }
 }
 @media screen and (min-width: 768px) {
-  .advantags-icon-container {
-    display: flex;
-  }
   .advantags-list {
     --ident: 24px;
     --items: 2;
@@ -577,6 +574,9 @@ img {
   }
 }
 @media screen and (min-width: 1200px) {
+  .advantags-icon-container {
+    display: flex;
+  }
   .section-advantags {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -1044,8 +1044,8 @@ img {
 }
 /* ================ Modal ==================== */
 .backdrop {
-  position: relative;
   position: fixed;
+  z-index: 10;
   top: 0;
   bottom: 0;
   right: 0;
